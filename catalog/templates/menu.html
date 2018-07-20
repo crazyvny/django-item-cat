@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"-->
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<title>Django App</title>
+</head>
+<body>
+	<header>
+		<h1>Hello Hackathon!</h1>
+	</header>
+	<div class="container">
+		{% block content %} {% endblock %}
+		<br>
+
+		<a href="/admin">Admin Login</a>
+	</div>
+	<div class="row top-menu">
+		<div class="col-md-10"></div>
+		<div class="col-md-2 text-right">
+		</div>
+	</div>
+	<div class="row divider blue">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner main">
+		<div class="col-md-1"></div>
+		<div class="col-md-11 padding-none">
+			<h1>Restaurants</h1>
+		</div>
+	</div>
+</div>
+	<div class="row padding-top padding-bottom">
+		<div class="col-md-1"></div>
+		<div class="col-md-11 padding-none">
+			
+				<button class="btn btn-default" id="new-menu-item">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"><a href="{% url 'edit'  id %}">Edit Restaurant</a></span>
+				</button>
+			</a>
+			
+				<button class="btn btn-default" id="new-menu-item">
+					<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Add Menu Item
+				</button>
+			</a>
+						
+				<button class="btn btn-default delete" id="delete-restaurant">
+					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete Restaurant
+				</button>
+			</a>
+		</div>
+		<div class="col-md-7"></div>
+	</div>
+		<div class="col-md-1"></div>
+			<div class="col-md-3">
+				<h2>{{menu.course}}</h2>
+					<div class="menu-item">
+						<h3>{{menu.name}}</h3>
+						<p>{{menu.description}}</p>
+						<p class="menu-price">{{menu.price}}</p>
+						Edit</a> | 
+						Delete</a>
+					</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</body>
